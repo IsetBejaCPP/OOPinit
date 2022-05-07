@@ -24,14 +24,21 @@
 
 using std::cout;
 
+// Créer le type Rectangle
 class Rectangle{
 private:
   float lo = 1;
   float la = 1;
+public:
+  void affiche(){
+    cout << "(" << lo << ", " << la << ")";
+  }
 };
 
 int main(){
-  cout << "Bonjour";
+  Rectangle r;      // Instancier un objet de type rectangle
+
+  r.affiche();      // Invoquer la méthode affiche pour afficher les caractéristiques du rectangle
 
   return 0;
 }
