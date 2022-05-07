@@ -1,5 +1,5 @@
 /**
- * @file Rectangle.cpp
+ * @file mainRectangle.cpp
  * @author R. ALOUI (isetk.c2i@gmail.com)
  * @brief Ce programme doit donner la possibiliter de gérer des formes géométriques,
  *        en particuler les rectangles. Rappelons qu'un rectangles est une forme 
@@ -23,6 +23,12 @@
 #include <iostream>
 
 using std::cout;
+
+class Rectangle{
+private:
+  float lo = 1;
+  float la = 1;
+};
 
 int main(){
   cout << "Bonjour";
