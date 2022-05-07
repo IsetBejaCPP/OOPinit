@@ -43,11 +43,15 @@ public:
   }
 
   void affiche(){
-    cout << "(" << lo << ", " << la << ") P = " << perimetre();
+    cout << "(" << lo << ", " << la << ") P = " << perimetre() << ", A = " << aire();
   }
 
   float perimetre(){
     return 2 * (lo + la);
+  }
+
+  float aire(){
+    return lo * la;
   }
 };
 
