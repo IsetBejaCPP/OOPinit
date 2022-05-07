@@ -41,8 +41,13 @@ public:
     la = lla;
     cout << "Appel du constructeur paramétré\n";
   }
+
   void affiche(){
-    cout << "(" << lo << ", " << la << ")";
+    cout << "(" << lo << ", " << la << ") P = " << perimetre();
+  }
+
+  float perimetre(){
+    return 2 * (lo + la);
   }
 };
 
