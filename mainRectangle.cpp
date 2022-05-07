@@ -36,15 +36,23 @@ public:
     cout << "Appel du constructeur par défaut\n";
   }
 
+  Rectangle(float llo, float lla){  // Constructeur paramétré (2 paramètres)
+    lo = llo; 
+    la = lla;
+    cout << "Appel du constructeur paramétré\n";
+  }
   void affiche(){
     cout << "(" << lo << ", " << la << ")";
   }
 };
 
 int main(){
-  Rectangle r;      // Instancier un objet de type rectangle, qui est créé avec le constructeur par défaut
+  Rectangle r;          // Instancier un objet de type rectangle, qui est créé avec le constructeur par défaut
+  Rectangle r1(10, 10); // Instancier un objet de type rectangle, qui est créé avec le constructeur parparamétré
 
   r.affiche();      // Invoquer la méthode affiche pour afficher les caractéristiques du rectangle
+  cout << "\n";
+  r1.affiche();
 
   return 0;
 }
