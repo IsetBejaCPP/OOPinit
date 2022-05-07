@@ -70,7 +70,7 @@ public:
     return res;
   }
 
-  // Redéfinition de l'opérateur +
+  // Redéfinition de l'opérateur -
   // r1 - r2
   Rectangle operator-(const Rectangle r) const{   // L'opérateur (c'est une fonction) n'a qu'un seul paramètre,
                                       // c'est l'opérande à droite de l'opérateur.
