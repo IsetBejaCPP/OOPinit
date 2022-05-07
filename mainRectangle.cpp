@@ -33,13 +33,13 @@ public:
   Rectangle(){    // Constructeur par défaut (sans paramètres), il est utilisé lors de la création de l'objet.
     lo = 1;       // Le constructeur est une fonction particulière qui porte le même nom de la classe.
     la = 1;
-    cout << "Appel du constructeur par défaut\n";
+    // cout << "Appel du constructeur par défaut\n";
   }
 
   Rectangle(float llo, float lla){  // Constructeur paramétré (2 paramètres)
     lo = llo; 
     la = lla;
-    cout << "Appel du constructeur paramétré\n";
+    // cout << "Appel du constructeur paramétré\n";
   }
 
   void affiche(){
@@ -53,15 +53,35 @@ public:
   float aire(){
     return lo * la;
   }
+
+  // Redéfinition de l'opérateur +
+  // r1 + r2
+  Rectangle operator+(const Rectangle r) const{   // L'opérateur (c'est une fonction) n'a qu'un seul paramètre,
+                                      // c'est l'opérande à droite de l'opérateur.
+    float tmpLo, tmpLa;
+
+    tmpLo = lo + r.lo;
+    tmpLa = la + r.la;
+
+    Rectangle res(tmpLo, tmpLa);
+
+    return res;
+  }
 };
 
 int main(){
-  Rectangle r;          // Instancier un objet de type rectangle, qui est créé avec le constructeur par défaut
-  Rectangle r1(10, 10); // Instancier un objet de type rectangle, qui est créé avec le constructeur parparamétré
+  Rectangle r1;         // Instancier un objet de type rectangle, qui est créé avec le constructeur par défaut
+  Rectangle r2(10, 10); // Instancier un objet de type rectangle, qui est créé avec le constructeur parparamétré
+  Rectangle r;
 
-  r.affiche();      // Invoquer la méthode affiche pour afficher les caractéristiques du rectangle
+  r1.affiche();      // Invoquer la méthode affiche pour afficher les caractéristiques du rectangle
   cout << "\n";
-  r1.affiche();
+  r2.affiche();
+
+  r = r1 + r2;
+
+  cout << "\n";
+  r.affiche();
 
   return 0;
 }
