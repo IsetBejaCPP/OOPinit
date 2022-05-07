@@ -11,7 +11,9 @@
  *          * la construction d'un rectangle dont les dimensions sont la 
  *    			  somme d'autres rectangles
  *          * la construction d'un rectangle dont les dimensions sont la
- *    			  différence des autres rectangles
+ *    			  différence des autres rectangles (on suppose que l'utilisateur donne toujours
+ *            les dimensions du premier rectangle sont supérieures à celles du second rectangle,
+ *            afin d'éviter des dimensions négatives)
  *          * afficher les caractéristiques d'un rectangle
  * @version 0.1
  * @date 2022-04-30
@@ -67,21 +69,41 @@ public:
 
     return res;
   }
+
+  // Redéfinition de l'opérateur +
+  // r1 - r2
+  Rectangle operator-(const Rectangle r) const{   // L'opérateur (c'est une fonction) n'a qu'un seul paramètre,
+                                      // c'est l'opérande à droite de l'opérateur.
+    float tmpLo, tmpLa;
+
+    tmpLo = lo - r.lo;
+    tmpLa = la - r.la;
+
+    Rectangle res(tmpLo, tmpLa);
+
+    return res;
+  }
 };
 
 int main(){
   Rectangle r1;         // Instancier un objet de type rectangle, qui est créé avec le constructeur par défaut
   Rectangle r2(10, 10); // Instancier un objet de type rectangle, qui est créé avec le constructeur parparamétré
-  Rectangle r;
+  Rectangle rs;
+  Rectangle rd;
 
   r1.affiche();      // Invoquer la méthode affiche pour afficher les caractéristiques du rectangle
   cout << "\n";
   r2.affiche();
 
-  r = r1 + r2;
+  rs = r1 + r2;
 
   cout << "\n";
-  r.affiche();
+  rs.affiche();
+
+  rd = r2 - r1;
+
+  cout << "\n";
+  rd.affiche();
 
   return 0;
 }
