@@ -30,13 +30,19 @@ private:
   float lo = 1;
   float la = 1;
 public:
+  Rectangle(){    // Constructeur par défaut (sans paramètres), il est utilisé lors de la création de l'objet.
+    lo = 1;       // Le constructeur est une fonction particulière qui porte le même nom de la classe.
+    la = 1;
+    cout << "Appel du constructeur par défaut\n";
+  }
+
   void affiche(){
     cout << "(" << lo << ", " << la << ")";
   }
 };
 
 int main(){
-  Rectangle r;      // Instancier un objet de type rectangle
+  Rectangle r;      // Instancier un objet de type rectangle, qui est créé avec le constructeur par défaut
 
   r.affiche();      // Invoquer la méthode affiche pour afficher les caractéristiques du rectangle
 
