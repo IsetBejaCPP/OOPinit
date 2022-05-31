@@ -96,6 +96,7 @@ int main(){
   r2.affiche();
 
   rs = r1 + r2;
+  // rs = r1.operator+(r2);
 
   cout << "\n";
   rs.affiche();
